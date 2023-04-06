@@ -1,5 +1,5 @@
 #Load packages _lazily_
-load_pkg <- rlang::quos(tidyverse, lubridate, readxl, janitor)
+load_pkg <- rlang::quos(tidyverse, lubridate, readxl, janitor, gt)
 
 invisible(lapply(lapply(load_pkg, rlang::quo_name),
                  library,
@@ -131,6 +131,12 @@ fish_abun %>%
        subtitle = "Observations by dive") +
   theme(plot.title=element_text(hjust=0.5),
         plot.subtitle=element_text(hjust=0.5))
+
+
+# Make tables -------------------------------------------------------------
+#The gt package *should* be able to make nice tables, but it's 100% more trouble than it's worth. Just do it in google sheets
+
+
 
 
 
